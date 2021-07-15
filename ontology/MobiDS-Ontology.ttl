@@ -1,0 +1,486 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix ids: <https://w3id.org/idsa/core/> .
+@prefix idsm: <https://w3id.org/idsa/metamodel/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dbpedia: <http://dbpedia.org/ontology/> .
+
+@prefix mobids: <http://w3id.org/mobids#> .
+@prefix cat: <http://w3id.org/mobids/data-categories#> .
+@prefix catd: <http://w3id.org/mobids/data-categories-detail#> .
+
+
+
+mobids:DataCategory a owl:Class ;
+  rdfs:label "Data category"@en ;
+  rdfs:comment "Class of all data categories (controlled vocabulary)."@en .
+
+mobids:dataCategory a owl:ObjectProperty ;
+  rdfs:domain ids:DataResource ;
+  rdfs:range mobids:DataCategory ;
+  rdfs:label "has data category"@en .
+
+mobids:DataCategoryDetail a owl:Class ;
+  rdfs:label "Date category detail"@en ;
+  rdfs:comment "Class of all data category details (controlled vocabulary)."@en .
+
+mobids:dataCategoryDetail a owl:ObjectProperty ;
+  rdfs:domain ids:DataResource ;
+  rdfs:range mobids:DataCategoryDetail ;
+  rdfs:label "data category detail"@en .
+
+mobids:TransportMode a owl:Class ;
+  rdfs:label "Transport mode"@en ;
+  rdfs:comment "Mode of transport is a term used to distinguish between different ways of transportation or transporting people or goods."@en .
+
+mobids:transportMode a owl:ObjectProperty ;
+  rdfs:domain ids:DataResource ;
+  rdfs:range mobids:TransportMode ;
+  rdfs:label "transport mode"@en .
+
+mobids:Car a mobids:TransportMode ;
+  rdfs:label "car"@en .
+
+mobids:Truck a mobids:TransportMode ;
+  rdfs:label "truck"@en .
+
+mobids:mdmBrokering a owl:DatatypeProperty ;
+  rdfs:domain ids:DataResource ;
+  rdfs:range xsd:boolean ;
+  rdfs:label "MDM Brokering"@en .
+
+mobids:NutsLocation a owl:Class ;
+  rdfs:subClassOf ids:Location ;
+  rdfs:label "NUTS Location"@en .
+
+mobids:networkCoverage a owl:DatatypeProperty ;
+  rdfs:domain ids:DataResource ;
+  rdfs:range rdfs:Literal ;
+  rdfs:label "road network coverage"@en .
+
+mobids:roadNetworkCoverageDescription a owl:DatatypeProperty ;
+  rdfs:domain ids:DataResource ;
+  rdfs:range rdfs:Literal ;
+  rdfs:label "additional description for road network coverage"@en .
+
+mobids:geoReferenceMethod a owl:DatatypeProperty ;
+  rdfs:domain ids:DataResource ;
+  rdfs:range rdfs:Literal ;
+  rdfs:label "geo reference method"@en .
+
+mobids:dataModel a owl:DatatypeProperty ;
+  rdfs:domain ids:DataResource ;
+  rdfs:range rdfs:Literal ;
+  rdfs:label "data model"@en .
+
+mobids:dataFormatAdditionalDescription a owl:DatatypeProperty ;
+  rdfs:domain ids:DataResource ;
+  rdfs:range rdfs:Literal ;
+  rdfs:label "additional description for the data format"@en .
+
+
+# Controlled vocabulary for Data Category
+cat:Allgemeine-Informationen-zur-Wegeplanung a mobids:DataCategory ;
+  rdfs:label "Allgemeine Informationen zur Wegeplanung"@de .
+  
+cat:Baustelleninformationen a mobids:DataCategory ;
+  rdfs:label "Baustelleninformationen"@de .
+  
+cat:Car-und-Bike-Sharing a mobids:DataCategory ;
+  rdfs:label "Car und Bike Sharing"@de .
+  
+cat:Dynamische-Verkehrsschilder-und-Verkehrsregelungen a mobids:DataCategory ;
+  rdfs:label "Dynamische Verkehrsschilder und Verkehrsregelungen"@de .
+  
+cat:EchtzeitVerkehrsdaten a mobids:DataCategory ;
+  rdfs:label "Echtzeit-Verkehrsdaten"@de .
+  
+cat:Fracht-und-Logistik a mobids:DataCategory ;
+  rdfs:label "Fracht und Logistik"@de .
+  
+cat:Fussverkehrsnetze a mobids:DataCategory ;
+  rdfs:label "Fußverkehrsnetze"@de .
+  
+cat:Informationen-über-Parkplaetze-und-Rastanlagen a mobids:DataCategory ;
+  rdfs:label "Informationen über Parkplätze und Rastanlagen"@de .
+  
+cat:Markttransparenzstelle-für-Kraftstoffe a mobids:DataCategory ;
+  rdfs:label "Markttransparenzstelle für Kraftstoffe"@de .
+  
+cat:Mautinformationen a mobids:DataCategory ;
+  rdfs:label "Mautinformationen"@de .
+  
+cat:Oeffentlicher-Verkehr-Betriebsinformationen a mobids:DataCategory ;
+  rdfs:label "Öffentlicher Verkehr: Betriebsinformationen"@de .
+  
+cat:Oeffentlicher-Verkehr-Fahrpreis-und-Vertriebsinformationen a mobids:DataCategory ;
+  rdfs:label "Öffentlicher Verkehr: Fahrpreis- und Vertriebsinformationen"@de .
+  
+cat:Oeffentlicher-Verkehr-Ortsinformationen a mobids:DataCategory ;
+  rdfs:label "Öffentlicher Verkehr: Ortsinformationen"@de .
+  
+cat:Radverkehrsnetze a mobids:DataCategory ;
+  rdfs:label "Radverkehrsnetze"@de .
+  
+cat:Sonstige a mobids:DataCategory ;
+  rdfs:label "Sonstige"@de .
+  
+cat:Statische-Strassendaten a mobids:DataCategory ;
+  rdfs:label "Statische Straßendaten"@de .
+  
+cat:Statische-Verkehrsschilder-und-Verkehrsregelungen a mobids:DataCategory ;
+  rdfs:label "Statische Verkehrsschilder und Verkehrsregelungen"@de .
+  
+cat:Strassenwetterinformationen a mobids:DataCategory ;
+  rdfs:label "Straßenwetterinformationen"@de .
+  
+cat:Tank-und-Ladestationen a mobids:DataCategory ;
+  rdfs:label "Tank- und Ladestationen"@de .
+  
+cat:Unerwartete-Ereignisse-und-Bedingungen a mobids:DataCategory ;
+  rdfs:label "Unerwartete Ereignisse und Bedingungen"@de .
+
+cat:Strassen a mobids:DataCategory ;
+  rdfs:label "Strassen"@de .
+cat:Wasserstrassen_und_Gewaesser a mobids:DataCategory ;
+  rdfs:label "Wasserstraßen und Gewässe"@de .
+cat:Klima_und_Wetter a mobids:DataCategory ;
+  rdfs:label "Klima und Wetter"@de .
+cat:Bahn a mobids:DataCategory ;
+  rdfs:label "Bahn"@de .
+cat:Infrastruktur a mobids:DataCategory ;
+  rdfs:label "Infrastruktur"@de .
+cat:Luft-_und_Raumfahrt a mobids:DataCategory ;
+  rdfs:label "Luft- und Raumfahrt"@de .
+
+
+# Controlled vocabulary for Data Category Details
+
+catd:Adressmerkmale a mobids:DataCategory ;
+  rdfs:label "Adressmerkmale"@de .
+
+catd:Parameter_zur_Berechnung_von_Fahrtkosten a mobids:DataCategory ;
+  rdfs:label "Parameter zur Berechnung von Fahrtkosten"@de .
+
+catd:Parameter_zur_Berechnung_von_Umweltfaktoren a mobids:DataCategory ;
+  rdfs:label "Parameter zur Berechnung von Umweltfaktoren"@de .
+
+catd:Points_of_interest a mobids:DataCategory ;
+  rdfs:label "Points of interest "@de .
+
+catd:Topografische_Orte a mobids:DataCategory ;
+  rdfs:label "Topografische Orte"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Kurzzeit-Baustellen a mobids:DataCategory ;
+  rdfs:label "Kurzzeit-Baustellen"@de .
+
+catd:Langzeit-Baustellen a mobids:DataCategory ;
+  rdfs:label "Langzeit-Baustellen"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Bezahlmethoden a mobids:DataCategory ;
+  rdfs:label "Bezahlmethoden"@de .
+
+catd:Bike_sharing_Standorte_und_Bedingungen a mobids:DataCategory ;
+  rdfs:label "Bike sharing: Standorte und Bedingungen"@de .
+
+catd:Bike_sharing_Verfuegbarkeiten a mobids:DataCategory ;
+  rdfs:label "Bike sharing_Verfügbarkeiten"@de .
+
+catd:Car_sharing_Standorte_und_Bedingungen a mobids:DataCategory ;
+  rdfs:label "Car sharing: Standorte und Bedingungen"@de .
+
+catd:Car_sharing_Verfuegbarkeiten a mobids:DataCategory ;
+  rdfs:label "Car sharing: Verfügbarkeiten"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Dynamische_Geschwindigkeitsbegrenzungen a mobids:DataCategory ;
+  rdfs:label "Dynamische Geschwindigkeitsbegrenzungen"@de .
+
+catd:Lkw-Ueberholverbote a mobids:DataCategory ;
+  rdfs:label "Lkw-Überholverbote"@de .
+
+catd:Sonstige_Beschraenkungen_und_Verkehrsregelungen a mobids:DataCategory ;
+  rdfs:label "Sonstige Beschränkungen und Verkehrsregelungen"@de .
+
+catd:Sperrungen_und_dynamische_Beschraenkungen_an_Tunneln a mobids:DataCategory ;
+  rdfs:label "Sperrungen und dynamische Beschränkungen an Tunneln"@de .
+
+catd:Sperrungen_und_dynamische_Beschraenkungen_von_Bruecken a mobids:DataCategory ;
+  rdfs:label "Sperrungen und dynamische Beschränkungen von Brücken"@de .
+
+catd:Sperrungen_und_dynamische_Beschraenkungen_von_Fahrstreifen a mobids:DataCategory ;
+  rdfs:label "Sperrungen und dynamische Beschränkungen von Fahrstreifen"@de .
+
+catd:Sperrungen_und_dynamische_Beschraenkungen_von_Straßen a mobids:DataCategory ;
+  rdfs:label "Sperrungen und dynamische Beschränkungen von Straßen"@de .
+
+catd:Temporaere_Verkehrsmanagementmaßnahmen a mobids:DataCategory ;
+  rdfs:label "Temporäre Verkehrsmanagementmaßnahmen"@de .
+
+catd:Wechselrichtungsregelungen a mobids:DataCategory ;
+  rdfs:label "Wechselrichtungsregelungen"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Aktuelle_Reisezeiten a mobids:DataCategory ;
+  rdfs:label "Aktuelle Reisezeiten"@de .
+
+catd:Erwartete_Reisezeitverluste a mobids:DataCategory ;
+  rdfs:label "Erwartete Reisezeitverluste"@de .
+
+catd:Geschwindigkeiten a mobids:DataCategory ;
+  rdfs:label "Geschwindigkeiten"@de .
+
+catd:Lage_und_Laenge_von_Verkehrsstaus a mobids:DataCategory ;
+  rdfs:label "Lage und Länge von Verkehrsstaus"@de .
+
+catd:Prognostizierte_Reisezeiten a mobids:DataCategory ;
+  rdfs:label "Prognostizierte Reisezeiten"@de .
+
+catd:Sonstige_Verkehrsdaten_an_Grenzuebergaengen a mobids:DataCategory ;
+  rdfs:label "Sonstige Verkehrsdaten an Grenzübergängen"@de .
+
+catd:Verkehrsaufkommen a mobids:DataCategory ;
+  rdfs:label "Verkehrsaufkommen"@de .
+
+catd:Wartezeiten_an_Grenzuebergaengen_zu_Nicht-EU-Staaten a mobids:DataCategory ;
+  rdfs:label "Wartezeiten an Grenzübergängen zu Nicht-EU-Staaten"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Lkw-Fuehrungskonzepte a mobids:DataCategory ;
+  rdfs:label "Lkw-Führungskonzepte"@de .
+
+catd:Standorte_und_Bedingungen_von_Lieferzonen a mobids:DataCategory ;
+  rdfs:label "Standorte und Bedingungen von Lieferzonen"@de .
+
+catd:Verfuegbarkeit_von_Lieferzonen a mobids:DataCategory ;
+  rdfs:label "Verfügbarkeit von Lieferzonen"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Fusswegenetz_und_Einrichtungen_zur_Barrierefreiheit a mobids:DataCategory ;
+  rdfs:label "Fußwegenetz und Einrichtungen zur Barrierefreiheit"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Allgemeines_Parken_Standorte_und_Bedingungen_von_Parkplaetzen_und_Rastanlagen a mobids:DataCategory ;
+  rdfs:label "Allgemeines Parken: Standorte und Bedingungen von Parkplätzen und Rastanlagen"@de .
+
+catd:Allgemeines_Parken_Verfuegbarkeit_von_Parkplaetzen a mobids:DataCategory ;
+  rdfs:label "Allgemeines Parken: Verfügbarkeit von Parkplätzen"@de .
+
+catd:Fahrradstellplaetze a mobids:DataCategory ;
+  rdfs:label "Fahrradstellplätze"@de .
+
+catd:Lkw-Parken_Standorte_und_Bedingungen_von_Parkplaetzen_und_Rastanlagen a mobids:DataCategory ;
+  rdfs:label "Lkw-Parken: Standorte und Bedingungen von Parkplätzen und Rastanlagen"@de .
+
+catd:Lkw-Parken_Verfuegbarkeit_von_Parkplaetzen a mobids:DataCategory ;
+  rdfs:label "Lkw-Parken: Verfügbarkeit von Parkplätzen"@de .
+
+catd:Park_and_Ride-Anlagen a mobids:DataCategory ;
+  rdfs:label "Park & Ride-Anlagen"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:MTS-K_Beschwerden a mobids:DataCategory ;
+  rdfs:label "MTS-K Beschwerden"@de .
+
+catd:MTS-K_Grunddaten a mobids:DataCategory ;
+  rdfs:label "MTS-K Grunddaten"@de .
+
+catd:MTS-K_Preisdaten a mobids:DataCategory ;
+  rdfs:label "MTS-K Preisdaten"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Ausweisung_von_Mautstraßen  a mobids:DataCategory ;
+  rdfs:label "Ausweisung von Mautstraßen "@de .
+
+catd:Standorte_von_Mautstationen a mobids:DataCategory ;
+  rdfs:label "Standorte von Mautstationen"@de .
+
+catd:Strassennutzungsgebühren    a mobids:DataCategory ;
+  rdfs:label "Straßennutzungsgebühren   "@de .
+
+catd:Zahlungsmoeglichkeiten a mobids:DataCategory ;
+  rdfs:label "Zahlungsmöglichkeiten"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Anschlussverbindungen_an_Verkehrsknotenpunkten a mobids:DataCategory ;
+  rdfs:label "Anschlussverbindungen an Verkehrsknotenpunkten"@de .
+
+catd:Betriebskalender a mobids:DataCategory ;
+  rdfs:label "Betriebskalender "@de .
+
+catd:Betriebszeiten a mobids:DataCategory ;
+  rdfs:label "Betriebszeiten"@de .
+
+catd:Fahrpläne_dynamisch_voraussichtliche_Ankunfts-_und_Abfahrtszeiten a mobids:DataCategory ;
+  rdfs:label "Fahrpläne (dynamisch), voraussichtliche Ankunfts- und Abfahrtszeiten"@de .
+
+catd:Fahrpläne_statisch a mobids:DataCategory ;
+  rdfs:label "Fahrpläne (statisch)"@de .
+
+catd:Fahrzeugdetails a mobids:DataCategory ;
+  rdfs:label "Fahrzeugdetails"@de .
+
+catd:Netztopologie_und_Routen_Strecken  a mobids:DataCategory ;
+  rdfs:label "Netztopologie und Routen/Strecken "@de .
+
+catd:Planmaessige_Umsteigebeziehungen_im_Linienverkehr a mobids:DataCategory ;
+  rdfs:label "Planmäßige Umsteigebeziehungen im Linienverkehr"@de .
+
+catd:Stoerungen_Verspaetungen_Ausfaelle a mobids:DataCategory ;
+  rdfs:label "Störungen, Verspätungen, Ausfälle"@de .
+
+catd:Verkehrsunternehmen a mobids:DataCategory ;
+  rdfs:label "Verkehrsunternehmen"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Besondere_Ticketarten a mobids:DataCategory ;
+  rdfs:label "Besondere Ticketarten"@de .
+
+catd:Fahrgastklassen a mobids:DataCategory ;
+  rdfs:label "Fahrgastklassen"@de .
+
+catd:Geschaeftsbedingungen a mobids:DataCategory ;
+  rdfs:label "Geschäftsbedingungen"@de .
+
+catd:Standardtarife a mobids:DataCategory ;
+  rdfs:label "Standardtarife"@de .
+
+catd:Standardticketarten a mobids:DataCategory ;
+  rdfs:label "Standardticketarten"@de .
+
+catd:Vertriebsinformationen a mobids:DataCategory ;
+  rdfs:label "Vertriebsinformationen"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Zugangsknoten_und_Haltestellen_aktueller_Status_von_Ausstattungsmerkmalen a mobids:DataCategory ;
+  rdfs:label "Zugangsknoten und Haltestellen: aktueller Status von Ausstattungsmerkmalen"@de .
+
+catd:Zugangsknoten_und_Haltestellen_Barrierefreiheit_und_interne_Wegefuehrung  a mobids:DataCategory ;
+  rdfs:label "Zugangsknoten und Haltestellen: Barrierefreiheit und interne Wegeführung "@de .
+
+catd:Zugangsknoten_und_Haltestellen_Geometrien_und_Lageplaene a mobids:DataCategory ;
+  rdfs:label "Zugangsknoten und Haltestellen: Geometrien und Lagepläne"@de .
+
+catd:Zugangsknoten_und_Haltestellen_Standorte_und_Ausstattungsmerkmale a mobids:DataCategory ;
+  rdfs:label "Zugangsknoten und Haltestellen: Standorte und Ausstattungsmerkmale"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Radwegenetz_Geometrie_und_Streckeneigenschaften a mobids:DataCategory ;
+  rdfs:label "Radwegenetz: Geometrie und Streckeneigenschaften"@de .
+
+catd:Radwegenetz_Sperrungen_und_Umleitungen a mobids:DataCategory ;
+  rdfs:label "Radwegenetz: Sperrungen und Umleitungen"@de .
+
+catd:Radwegenetz_Streckendetails a mobids:DataCategory ;
+  rdfs:label "Radwegenetz: Streckendetails"@de .
+
+catd:Sonstige a mobids:DataCategory ;
+  rdfs:label "Sonstige"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Anzahl_der_Fahrstreifen a mobids:DataCategory ;
+  rdfs:label "Anzahl der Fahrstreifen"@de .
+
+catd:Kreuzungen a mobids:DataCategory ;
+  rdfs:label "Kreuzungen"@de .
+
+catd:Steigungen_Gefälle a mobids:DataCategory ;
+  rdfs:label "Steigungen/Gefälle"@de .
+
+catd:Strassenbreite a mobids:DataCategory ;
+  rdfs:label "Straßenbreite"@de .
+
+catd:Strassengeometrie a mobids:DataCategory ;
+  rdfs:label "Straßengeometrie"@de .
+
+catd:Strassenklassifizierung a mobids:DataCategory ;
+  rdfs:label "Straßenklassifizierung"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Dauerhafte_Zufahrtsbeschraenkungen a mobids:DataCategory ;
+  rdfs:label "Dauerhafte Zufahrtsbeschränkungen"@de .
+
+catd:Geschwindigkeitsbegrenzungen a mobids:DataCategory ;
+  rdfs:label "Geschwindigkeitsbegrenzungen"@de .
+
+catd:Sonstige_Verkehrsregelungen a mobids:DataCategory ;
+  rdfs:label "Sonstige Verkehrsregelungen"@de .
+
+catd:Sonstige_Verkehrsschilder a mobids:DataCategory ;
+  rdfs:label "Sonstige Verkehrsschilder"@de .
+
+catd:Verkehrsmanagementplaene a mobids:DataCategory ;
+  rdfs:label "Verkehrsmanagementpläne"@de .
+
+catd:Zufahrtsbedingungen_fuer_Bruecken a mobids:DataCategory ;
+  rdfs:label "Zufahrtsbedingungen für Brücken"@de .
+
+catd:Zufahrtsbedingungen_fuer_Tunnel a mobids:DataCategory ;
+  rdfs:label "Zufahrtsbedingungen für Tunnel"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Wetterbedingungen_mit_Auswirkungen_auf_Griffigkeit_und_Sicht a mobids:DataCategory ;
+  rdfs:label "Wetterbedingungen mit Auswirkungen auf Griffigkeit und Sicht"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Standorte_und_Nutzungsbedingungen_fuer_Ladestationen a mobids:DataCategory ;
+  rdfs:label "Standorte und Nutzungsbedingungen für Ladestationen"@de .
+
+catd:Standorte_und_Nutzungsbedingungen_fuer_Tankstellen a mobids:DataCategory ;
+  rdfs:label "Standorte und Nutzungsbedingungen für Tankstellen"@de .
+
+catd:Verfuegbarkeit_von_Ladestationen a mobids:DataCategory ;
+  rdfs:label "Verfügbarkeit von Ladestationen"@de .
+
+catd:Verfuegbarkeit_von_Tankstellen a mobids:DataCategory ;
+  rdfs:label "Verfügbarkeit von Tankstellen"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
+
+catd:Strassenzustandsinformationen a mobids:DataCategory ;
+  rdfs:label "Straßenzustandsinformationen"@de .
+
+catd:Unfall-_und_Stoerungsmeldungen a mobids:DataCategory ;
+  rdfs:label "Unfall- und Störungsmeldungen"@de .
+
+catd:Egal a mobids:DataCategory ;
+  rdfs:label "Egal"@de .
