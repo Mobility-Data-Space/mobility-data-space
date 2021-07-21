@@ -1,14 +1,14 @@
-# Datenraum Mobilität
+# Mobility Data Space
 
-Dieses Repository dient zur Dokumentation des Datenraum Mobilität.
+This repository if for documentation around the Mobility Data Space
 
-## Fragen und Diskussionen
-Über die [Discussions](https://github.com/Mobility-Data-Space/mobility-data-space/discussions)
-Funktion von Github können Sie Fragen, Kommentare usw. teilen und über die 
+## Questions and Discussions
+You can raise your questions, comments or further topics in the section [Discussions](https://github.com/Mobility-Data-Space/mobility-data-space/discussions)
+as well as raise your incidents in the 
 [Issues](https://github.com/Mobility-Data-Space/mobility-data-space/issues)
-Probleme melden.
+section.
 
-## Ankündigungen
-Außerdem werden wir den Bereich 
+## Annoucements
+In
 [Announcements](https://github.com/Mobility-Data-Space/mobility-data-space/discussions/categories/announcements)
-für Ankündigungen, wie z.B. Downtimes oder Komponentenupdates, nutzen.
+ important news and update will be shared like possible downtimes or components and release updates. 
