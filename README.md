@@ -12,3 +12,6 @@ section.
 In
 [Announcements](https://github.com/Mobility-Data-Space/mobility-data-space/discussions/categories/announcements)
  important news and update will be shared like possible downtimes or components and release updates. 
+
+## Best Practices
+In the Wiki section you can find HowTos and Best Practices e.g. [How to configure your Data Space Connector](https://github.com/Mobility-Data-Space/mobility-data-space.wiki.git)
