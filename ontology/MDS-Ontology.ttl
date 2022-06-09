@@ -1,0 +1,230 @@
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix ids:     <https://w3id.org/idsa/core/> .
+@prefix idsm:    <https://w3id.org/idsa/metamodel/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dbpedia: <http://dbpedia.org/ontology/> .
+
+@prefix mds:     <http://w3id.org/mds#> .
+@prefix cat:     <http://w3id.org/mds/data-categories#> .
+@prefix sub:     <http://w3id.org/mds/data-subcategories#> .
+@prefix tmode:   <http://w3id.org/mds/transport-mode#> .
+
+
+# ----- CLASSES -----
+
+mds:DataCategory
+    a            owl:Class ;
+    rdfs:label   "Data category"@en ;
+    rdfs:comment "Class of all data categories (controlled vocabulary)."@en .
+
+mds:DataSubcategory
+    a            owl:Class ;
+    rdfs:label   "Data subcategory"@en ;
+    rdfs:comment "Class of all data subcategories (controlled vocabulary)."@en .
+
+mds:TransportMode
+    a          owl:Class ;
+    rdfs:label "Transport mode"@en ;
+    rdfs:comment
+               "Mode of transport is a term used to distinguish between different ways of transportation or transporting people or goods."@en .
+
+
+# ----- PROPERTIES -----
+
+mds:dataCategory
+    a           owl:ObjectProperty ;
+    rdfs:domain ids:Resource ;
+    rdfs:range  mds:DataCategory ;
+    rdfs:label  "Data category"@en .
+
+mds:dataSubcategory
+    a           owl:ObjectProperty ;
+    rdfs:domain ids:Resource ;
+    rdfs:range  mds:DataSubcategory ;
+    rdfs:label  "Data subcategory"@en .
+
+mds:transportMode
+    a           owl:ObjectProperty ;
+    rdfs:domain ids:Resource ;
+    rdfs:range  mds:TransportMode ;
+    rdfs:label  "Transport mode"@en .
+
+mds:geoReferenceMethod
+    a           owl:DatatypeProperty ;
+    rdfs:domain ids:Resource ;
+    rdfs:range  rdfs:Literal ;
+    rdfs:label  "Geo reference method"@en .
+
+mds:dataModel
+    a           owl:DatatypeProperty ;
+    rdfs:domain ids:Resource ;
+    rdfs:range  rdfs:Literal ;
+    rdfs:label  "Data model"@en .
+
+mds:dataFormatAdditionalDescription
+    a           owl:DatatypeProperty ;
+    rdfs:domain ids:Resource ;
+    rdfs:range  rdfs:Literal ;
+    rdfs:label  "Additional description for the data format"@en .
+
+
+# Controlled vocabulary for TransportMode
+
+tmode:Rail
+    a          mds:TransportMode ;
+    rdfs:label "Rail"@en .
+
+tmode:Road
+    a          mds:TransportMode ;
+    rdfs:label "Road"@en .
+
+tmode:Water
+    a          mds:TransportMode ;
+    rdfs:label "Water"@en .
+
+tmode:Air
+    a          mds:TransportMode ;
+    rdfs:label "Air"@en .
+
+
+# Controlled vocabulary for Data Category
+
+cat:TrafficInformation
+    a          mds:DataCategory ;
+    rdfs:label "Traffic Information"@en .
+
+cat:RoadworksRoadConditions
+    a          mds:DataCategory ;
+    rdfs:label "Roadworks & Road Conditions"@en .
+
+cat:TrafficFlowInformation
+    a          mds:DataCategory ;
+    rdfs:label "Traffic Flow Information"@en .
+
+cat:ParkingInformation
+    a          mds:DataCategory ;
+    rdfs:label "Parking Information"@en .
+
+cat:FuelPriceElectromobility
+    a          mds:DataCategory ;
+    rdfs:label "Fuel Price & Electromobility"@en .
+
+cat:TrafficSignsSpeedInformation
+    a          mds:DataCategory ;
+    rdfs:label "Traffic Signs & Speed Information"@en .
+
+cat:WeatherInformation
+    a          mds:DataCategory ;
+    rdfs:label "Weather Information"@en .
+
+cat:PublicTransportInformation
+    a          mds:DataCategory ;
+    rdfs:label "Public Transport Information"@en .
+
+cat:CarBikeSharing
+    a          mds:DataCategory ;
+    rdfs:label "Car & Bike Sharing"@en .
+
+cat:Infrastructure
+    a          mds:DataCategory ;
+    rdfs:label "Infrastructure"@en .
+
+cat:Various
+    a          mds:DataCategory ;
+    rdfs:label "Various"@en .
+
+
+# Controlled vocabulary for Data Subcategory
+
+sub:GeneralInformationAboutPlanningOfRoutes
+    a          cat:Infrastructure ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "General Information About Planning Of Routes"@en .
+
+sub:DynamicSpeedInformation
+    a          cat:TrafficSignsSpeedInformation ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Dynamic Speed Information"@en .
+
+sub:DynamicTrafficSigns
+    a          cat:TrafficSignsSpeedInformation ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Dynamic Traffic Signs"@en .
+
+sub:StaticTrafficSigns
+    a          cat:TrafficSignsSpeedInformation ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Static Traffic Signs"@en .
+
+sub:RealtimeTrafficFlowData
+    a          cat:TrafficFlowInformation ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Realtime Traffic Flow Data"@en .
+
+sub:CargoLogistics
+    a          cat:Various ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Cargo & Logistics"@en .
+
+sub:PedestrianNetworks
+    a          cat:Infrastructure ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Pedestrian Networks"@en .
+
+sub:TollInformation
+    a          cat:Various ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Toll Information"@en .
+
+sub:Timetables
+    a          cat:PublicTransportInformation ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Timetables"@en .
+
+sub:Fare
+    a          cat:PublicTransportInformation ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Fare"@en .
+
+sub:LocationInformation
+    a          cat:PublicTransportInformation ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Location Information"@en .
+
+sub:CyclingNetworks
+    a          cat:Infrastructure ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Cycling Networks"@en .
+
+sub:Roadworks
+    a          cat:RoadworksRoadConditions ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Roadworks"@en .
+
+sub:RoadConditions
+    a          cat:RoadworksRoadConditions ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Road Conditions"@en .
+
+sub:FuelPrice
+    a          cat:FuelPriceElectromobility ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Fuel Price"@en .
+
+sub:FuelPrice
+    a          cat:FuelPriceElectromobility ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Electromobility"@en .
+
+sub:RoadNetwork
+    a          cat:Infrastructure ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Road Network"@en .
+
+sub:WaterRoutes
+    a          cat:Infrastructure ;
+    rdfs:type  mds:DataSubcategory ;
+    rdfs:label "Water Routes"@en .
