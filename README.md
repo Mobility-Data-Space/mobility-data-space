@@ -1,6 +1,6 @@
 # Mobility Data Space
 
-This repository if for documentation around the Mobility Data Space
+This repository is for documentation around the Mobility Data Space
 
 ## Questions and Discussions
 You can raise your questions, comments or further topics in the section [Discussions](https://github.com/Mobility-Data-Space/mobility-data-space/discussions)
@@ -15,3 +15,6 @@ In
 
 ## Best Practices
 In the [Wiki](https://github.com/Mobility-Data-Space/mobility-data-space/wiki) section you can find HowTos and Best Practices e.g. [How to configure your Data Space Connector](https://github.com/Mobility-Data-Space/mobility-data-space/wiki/How-to-configure-a-Dataspace-Connector-to-use-the-MDS)
+
+## MDS Ontology
+Please find the most recent version of the MDS Ontology [here](ontology/MDS-Ontology.ttl)
