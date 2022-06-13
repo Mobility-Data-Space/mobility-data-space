@@ -214,7 +214,7 @@ sub:FuelPrice
     rdfs:type  mds:DataSubcategory ;
     rdfs:label "Fuel Price"@en .
 
-sub:FuelPrice
+sub:Electromobility
     a          cat:FuelPriceElectromobility ;
     rdfs:type  mds:DataSubcategory ;
     rdfs:label "Electromobility"@en .
