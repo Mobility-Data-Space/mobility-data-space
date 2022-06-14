@@ -3,6 +3,7 @@
 @prefix ids:     <https://w3id.org/idsa/core/> .
 @prefix idsm:    <https://w3id.org/idsa/metamodel/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix dbpedia: <http://dbpedia.org/ontology/> .
@@ -141,90 +142,90 @@ cat:Various
 
 sub:GeneralInformationAboutPlanningOfRoutes
     a          cat:Infrastructure ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "General Information About Planning Of Routes"@en .
 
 sub:DynamicSpeedInformation
     a          cat:TrafficSignsSpeedInformation ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Dynamic Speed Information"@en .
 
 sub:DynamicTrafficSigns
     a          cat:TrafficSignsSpeedInformation ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Dynamic Traffic Signs"@en .
 
 sub:StaticTrafficSigns
     a          cat:TrafficSignsSpeedInformation ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Static Traffic Signs"@en .
 
 sub:RealtimeTrafficFlowData
     a          cat:TrafficFlowInformation ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Realtime Traffic Flow Data"@en .
 
 sub:CargoLogistics
     a          cat:Various ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Cargo & Logistics"@en .
 
 sub:PedestrianNetworks
     a          cat:Infrastructure ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Pedestrian Networks"@en .
 
 sub:TollInformation
     a          cat:Various ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Toll Information"@en .
 
 sub:Timetables
     a          cat:PublicTransportInformation ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Timetables"@en .
 
 sub:Fare
     a          cat:PublicTransportInformation ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Fare"@en .
 
 sub:LocationInformation
     a          cat:PublicTransportInformation ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Location Information"@en .
 
 sub:CyclingNetworks
     a          cat:Infrastructure ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Cycling Networks"@en .
 
 sub:Roadworks
     a          cat:RoadworksRoadConditions ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Roadworks"@en .
 
 sub:RoadConditions
     a          cat:RoadworksRoadConditions ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Road Conditions"@en .
 
 sub:FuelPrice
     a          cat:FuelPriceElectromobility ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Fuel Price"@en .
 
 sub:Electromobility
     a          cat:FuelPriceElectromobility ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Electromobility"@en .
 
 sub:RoadNetwork
     a          cat:Infrastructure ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Road Network"@en .
 
 sub:WaterRoutes
     a          cat:Infrastructure ;
-    rdfs:type  mds:DataSubcategory ;
+    rdf:type  mds:DataSubcategory ;
     rdfs:label "Water Routes"@en .
