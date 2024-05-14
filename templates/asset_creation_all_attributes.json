@@ -1,0 +1,70 @@
+{
+    "@type": "https://w3id.org/edc/v0.0.1/ns/Asset",
+    "https://w3id.org/edc/v0.0.1/ns/properties": {
+        "http://purl.org/dc/terms/identifier": "my-asset",
+        "http://purl.org/dc/terms/title": "My Asset",
+        "http://purl.org/dc/terms/language": "https://w3id.org/idsa/code/EN",
+        "http://purl.org/dc/terms/description": "Lorem Ipsum ...",
+        "http://purl.org/dc/terms/creator": {
+          "http://xmlns.com/foaf/0.1/name": "My Organization Name"
+        },
+        "http://purl.org/dc/terms/publisher": {
+          "http://xmlns.com/foaf/0.1/homepage": "https://data-source.my-org/about"
+        },
+        "http://purl.org/dc/terms/license": "https://data-source.my-org/license",
+      
+        "http://www.w3.org/ns/dcat#version": "1.1",
+        "http://www.w3.org/ns/dcat#keyword": ["some", "keywords"],
+        "http://www.w3.org/ns/dcat#distribution": {
+          "http://www.w3.org/ns/dcat#mediaType": "application/json",
+          "https://w3id.org/mobilitydcat-ap/mobilityDataStandard": {
+            "@id": "my-data-model-001",
+            "https://w3id.org/mobilitydcat-ap/schema": {
+              "http://www.w3.org/ns/dcat#downloadURL": [
+                "https://teamabc.departmentxyz.schema/a",
+                "https://teamabc.departmentxyz.schema/b"
+              ],
+              "http://www.w3.org/2000/01/rdf-schema#Literal": "These reference files are important"
+            }
+          },
+          "http://www.w3.org/ns/adms#sample": [
+            "https://teamabc.departmentxyz.sample/a",
+            "https://teamabc.departmentxyz.sample/b"
+          ],
+          "http://purl.org/dc/terms/rights": {
+            "http://www.w3.org/2000/01/rdf-schema#label": "Please cite the dataset as..."
+          }
+        },
+        "http://www.w3.org/ns/dcat#landingPage": "https://data-source.my-org/docs",
+      
+        "https://semantic.sovity.io/dcat-ext#httpDatasourceHintsProxyMethod": "false",
+        "https://semantic.sovity.io/dcat-ext#httpDatasourceHintsProxyPath": "false",
+        "https://semantic.sovity.io/dcat-ext#httpDatasourceHintsProxyQueryParams": "false",
+        "https://semantic.sovity.io/dcat-ext#httpDatasourceHintsProxyBody": "false",
+      
+        "https://w3id.org/mobilitydcat-ap/mobilityTheme": {
+          "https://w3id.org/mobilitydcat-ap/mobility-theme/data-content-category": "Infrastructure and Logistics",
+          "https://w3id.org/mobilitydcat-ap/mobility-theme/data-content-sub-category": "General Information About Planning Of Routes"
+        },
+        "https://w3id.org/mobilitydcat-ap/georeferencingMethod": "my-geo-reference-method",
+        "https://w3id.org/mobilitydcat-ap/transportMode": "my-transport-mode",
+      
+        "http://purl.org/dc/terms/rightsHolder": "my-sovereign-legal-name",
+        "http://purl.org/dc/terms/spatial": {
+          "http://www.w3.org/2004/02/skos/core#prefLabel": "my-geo-location",
+          "http://purl.org/dc/terms/identifier": ["DE", "DE636"]
+        },
+        "http://purl.org/dc/terms/accrualPeriodicity": "every month",
+        "http://purl.org/dc/terms/temporal": {
+          "http://www.w3.org/ns/dcat#startDate": "2024-02-01",
+          "http://www.w3.org/ns/dcat#endDate": "2024-02-10"
+        },
+      
+        "http://unknown/some-custom-property": "test"   
+    },
+    "https://w3id.org/edc/v0.0.1/ns/privateProperties": {},
+    "https://w3id.org/edc/v0.0.1/ns/dataAddress": {
+        "https://w3id.org/edc/v0.0.1/ns/type": "HttpData",
+        "https://w3id.org/edc/v0.0.1/ns/baseUrl": "https://api.hamburg.de/datasets/v1/verkehrslage/collections/verkehrslage/items?f=json"
+    }
+}

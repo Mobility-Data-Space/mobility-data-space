@@ -1,0 +1,37 @@
+{
+    "@type": "https://w3id.org/edc/v0.0.1/ns/Asset",
+    "https://w3id.org/edc/v0.0.1/ns/properties": {
+        "https://w3id.org/edc/v0.0.1/ns/id": "My-API-Test-Asset",
+        "http://www.w3.org/ns/dcat#version": "1.0",
+        "http://purl.org/dc/terms/language": "https://w3id.org/idsa/code/EN",
+        "http://purl.org/dc/terms/title": "test-document",
+        "http://purl.org/dc/terms/description": "my test document",
+        "http://www.w3.org/ns/dcat#keyword": [
+            "keyword1",
+            "keyword2"
+        ],
+        "http://purl.org/dc/terms/creator": {
+            "http://xmlns.com/foaf/0.1/name": "My Org"
+        },
+        "http://purl.org/dc/terms/license": "https://creativecommons.org/licenses/by/4.0/",
+        "http://www.w3.org/ns/dcat#landingPage": "https://mydepartment.myorg.com/my-offer",
+        "http://www.w3.org/ns/dcat#mediaType": "text/plain",
+        "https://semantic.sovity.io/dcat-ext#httpDatasourceHintsProxyMethod": "false",
+        "https://semantic.sovity.io/dcat-ext#httpDatasourceHintsProxyPath": "false",
+        "https://semantic.sovity.io/dcat-ext#httpDatasourceHintsProxyQueryParams": "false",
+        "https://semantic.sovity.io/dcat-ext#httpDatasourceHintsProxyBody": "false",
+        "http://purl.org/dc/terms/publisher": {
+            "http://xmlns.com/foaf/0.1/homepage": "https://myorg.com/"
+        },
+        "https://w3id.org/mobilitydcat-ap/transport-mode": "Road",
+        "https://w3id.org/mobilitydcat-ap/mobility-theme/data-content-category": "Traffic Information",
+        "https://w3id.org/mobilitydcat-ap/mobility-theme/data-content-sub-category": "Hazard Warnings",
+        "https://w3id.org/mobilitydcat-ap/mobility-data-standard": "JSON",
+        "https://w3id.org/mobilitydcat-ap/georeferencing-method": "Geo Ref Method Test"
+    },
+    "https://w3id.org/edc/v0.0.1/ns/privateProperties": {},
+    "https://w3id.org/edc/v0.0.1/ns/dataAddress": {
+        "https://w3id.org/edc/v0.0.1/ns/type": "HttpData",
+        "https://w3id.org/edc/v0.0.1/ns/baseUrl": "https://api.hamburg.de/datasets/v1/verkehrslage/collections/verkehrslage/items?f=json"
+    }
+}
