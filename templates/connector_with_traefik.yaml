@@ -1,0 +1,109 @@
+version: "3.8"
+services:
+  edc-ui:
+    image: ghcr.io/sovity/edc-ui:3.2.2
+    environment:
+      - EDC_UI_CATALOG_URLS=
+      - EDC_UI_ACTIVE_PROFILE=mds-open-source
+      - EDC_UI_CONFIG_URL=edc-ui-config
+      - EDC_UI_MANAGEMENT_API_URL=https://[set your connector address]/api/management
+      - EDC_UI_MANAGEMENT_API_KEY=ApiKeyDefaultValue
+    
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.edc-ui.rule=Host(`[set your connector address]`)"
+      - "traefik.http.routers.edc-ui.entrypoints=websecure"
+      - "traefik.http.routers.edc-ui.tls.certresolver=myresolver"
+      - "traefik.http.routers.edc-ui.service=edc-ui"
+      - "traefik.http.services.edc-ui.loadbalancer.server.port=8080"
+
+  edc:
+    image: ghcr.io/sovity/edc-ce-mds:7.4.2
+    depends_on:
+      - postgresql
+    environment:
+      EDC_OAUTH_TOKEN_URL: "https://daps-next.test.mobility-dataspace.eu/realms/DAPS/protocol/openid-connect/token"
+      EDC_OAUTH_PROVIDER_JWKS_URL: "https://daps-next.test.mobility-dataspace.eu/realms/DAPS/protocol/openid-connect/certs"
+      EDC_LOGGINGHOUSE_EXTENSION_ENABLED: "true"
+      EDC_LOGGINGHOUSE_EXTENSION_URL: "https://clearing-next.test.mobility-dataspace.eu" #LoggingHouse URL of the MDS environment
+
+      EDC_OAUTH_CLIENT_ID: "[set your oauth client id]"
+      MY_EDC_PARTICIPANT_ID: "[set your participant id]"
+
+  
+      EDC_KEYSTORE: "/[set your cert name].jks"
+      EDC_KEYSTORE_PASSWORD: "[set your cert password]"
+      EDC_OAUTH_CERTIFICATE_ALIAS: 1
+      EDC_OAUTH_PRIVATE_KEY_ALIAS: 1
+    
+      MY_EDC_TITLE: "[set your connector name]"
+      MY_EDC_DESCRIPTION: "[set your connector description]"
+      MY_EDC_CURATOR_URL: "[set your organization homepage]"
+      MY_EDC_CURATOR_NAME: "[set your organization name]"
+      MY_EDC_MAINTAINER_URL: "[set your maintainer homepage if applicable]"
+      MY_EDC_MAINTAINER_NAME: "[set your maintainer name if applicable]"
+
+      MY_EDC_FQDN: "[set your connector address]"
+      EDC_API_AUTH_KEY: ApiKeyDefaultValue
+
+      MY_EDC_JDBC_URL: jdbc:postgresql://postgresql:5432/edc
+      MY_EDC_JDBC_USER: edc
+      MY_EDC_JDBC_PASSWORD: edc
+
+      MY_EDC_PROTOCOL: "https://"
+      EDC_DSP_CALLBACK_ADDRESS: https://[set your connector address]/api/dsp
+      EDC_WEB_REST_CORS_ENABLED: 'true'
+      EDC_WEB_REST_CORS_HEADERS: 'origin,content-type,accept,authorization,X-Api-Key'
+      EDC_WEB_REST_CORS_ORIGINS: '*'
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.edc-dsp.rule=Host(`[set your connector address]`) && PathPrefix(`/api/dsp`)"
+      - "traefik.http.routers.edc-dsp.entrypoints=websecure"
+      - "traefik.http.routers.edc-dsp.tls.certresolver=myresolver"
+      - "traefik.http.routers.edc-dsp.service=edc-dsp"
+      - "traefik.http.services.edc-dsp.loadbalancer.server.port=11003"       
+      - "traefik.http.routers.edc-management.rule=Host(`[set your connector address]`) && PathPrefix(`/api/management`)"
+      - "traefik.http.routers.edc-management.entrypoints=websecure"
+      - "traefik.http.routers.edc-management.tls.certresolver=myresolver"
+      - "traefik.http.routers.edc-management.service=edc-management"
+      - "traefik.http.services.edc-management.loadbalancer.server.port=11002"    
+       
+    volumes:
+      - /[set your cert path]/[set your cert name].jks:/[set your cert name].jks
+      
+  traefik:
+    image: "traefik:v2.11"
+    command:
+      #- "--log.level=DEBUG"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.myresolver.acme.httpchallenge=true"
+      - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
+      - "--certificatesresolvers.myresolver.acme.email=[set the email you used by cert creation]"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - "letsencrypt:/letsencrypt"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      
+  postgresql:
+    image: docker.io/bitnami/postgresql:11
+    restart: always
+    environment:
+      POSTGRESQL_USERNAME: edc
+      POSTGRESQL_PASSWORD: edc
+      POSTGRESQL_DATABASE: edc
+    
+    volumes:
+      - 'postgresql:/bitnami/postgresql'
+
+volumes:
+  postgresql:
+    driver: local
+  letsencrypt:
