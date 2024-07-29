@@ -44,7 +44,7 @@ services:
       MY_EDC_MAINTAINER_NAME: "[set your maintainer name if applicable]"
 
       MY_EDC_FQDN: "[set your connector address]"
-      EDC_API_AUTH_KEY: ApiKeyDefaultValue
+      EDC_API_AUTH_KEY: [set your API Key value]
 
       MY_EDC_JDBC_URL: jdbc:postgresql://postgresql:5432/edc
       MY_EDC_JDBC_USER: edc
