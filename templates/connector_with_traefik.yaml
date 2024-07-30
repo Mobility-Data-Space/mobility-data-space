@@ -43,7 +43,7 @@ services:
       MY_EDC_MAINTAINER_URL: "[set your maintainer homepage if applicable]"
       MY_EDC_MAINTAINER_NAME: "[set your maintainer name if applicable]"
 
-      MY_EDC_FQDN: "[set your connector address]"
+      MY_EDC_FQDN: "[set your connector domain, e.g. my-connector.com]"
       EDC_API_AUTH_KEY: [set your API Key value]
 
       MY_EDC_JDBC_URL: jdbc:postgresql://postgresql:5432/edc
