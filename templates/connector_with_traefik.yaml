@@ -7,7 +7,7 @@ services:
       - EDC_UI_ACTIVE_PROFILE=mds-open-source
       - EDC_UI_CONFIG_URL=edc-ui-config
       - EDC_UI_MANAGEMENT_API_URL=https://[set your connector address]/api/management
-      - EDC_UI_MANAGEMENT_API_KEY=ApiKeyDefaultValue
+      - EDC_UI_MANAGEMENT_API_KEY=[set your API Key value]
     
     labels:
       - "traefik.enable=true"
