@@ -1,0 +1,14 @@
+{
+   "@id": "contract_definition_with_multiple_assets",
+   "@type": "https://w3id.org/edc/v0.0.1/ns/ContractDefinition",
+   "https://w3id.org/edc/v0.0.1/ns/accessPolicyId": "always-true",
+   "https://w3id.org/edc/v0.0.1/ns/contractPolicyId": "always-true",
+   "https://w3id.org/edc/v0.0.1/ns/assetsSelector": [
+    {
+      "@type": "CriterionDto",
+      "https://w3id.org/edc/v0.0.1/ns/operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
+      "https://w3id.org/edc/v0.0.1/ns/operator": "in",                                  
+      "https://w3id.org/edc/v0.0.1/ns/operandRight": ["asset1","asset2"]
+    }
+   ]
+}
