@@ -8,7 +8,7 @@
       "@type": "CriterionDto",
       "https://w3id.org/edc/v0.0.1/ns/operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
       "https://w3id.org/edc/v0.0.1/ns/operator": "in",                                  
-      "https://w3id.org/edc/v0.0.1/ns/operandRight": ["asset1","asset2"]
+      "https://w3id.org/edc/v0.0.1/ns/operandRight": ["[assetId1]","[assetId2]"]
     }
    ]
 }
