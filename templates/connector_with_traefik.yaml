@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   edc-ui:
-    image: ghcr.io/sovity/edc-ui:3.2.2
+    image: ghcr.io/sovity/edc-ui:4.1.6
     environment:
       - EDC_UI_CATALOG_URLS=
       - EDC_UI_ACTIVE_PROFILE=mds-open-source
@@ -18,7 +18,7 @@ services:
       - "traefik.http.services.edc-ui.loadbalancer.server.port=8080"
 
   edc:
-    image: ghcr.io/sovity/edc-ce-mds:7.4.2
+    image: ghcr.io/sovity/edc-ce-mds:10.4.2
     depends_on:
       - postgresql
     environment:
