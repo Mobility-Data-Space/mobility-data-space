@@ -28,7 +28,7 @@ services:
       EDC_LOGGINGHOUSE_EXTENSION_URL: "https://clearing-next.test.mobility-dataspace.eu" #LoggingHouse URL of the MDS environment
 
       EDC_OAUTH_CLIENT_ID: "[set your oauth client id]"
-      MY_EDC_PARTICIPANT_ID: "[set your participant id]"
+      MY_EDC_PARTICIPANT_ID: "[set your connector participant id]"
 
   
       EDC_KEYSTORE: "/[set your cert name].jks"
