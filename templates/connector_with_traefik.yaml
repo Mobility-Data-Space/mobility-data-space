@@ -31,7 +31,7 @@ services:
       MY_EDC_PARTICIPANT_ID: "[set your connector participant id]"
 
   
-      EDC_KEYSTORE: "/[set your cert name].jks"
+      EDC_KEYSTORE: "[set your cert path and name].jks"
       EDC_KEYSTORE_PASSWORD: "[set your cert password]"
       EDC_OAUTH_CERTIFICATE_ALIAS: 1
       EDC_OAUTH_PRIVATE_KEY_ALIAS: 1
