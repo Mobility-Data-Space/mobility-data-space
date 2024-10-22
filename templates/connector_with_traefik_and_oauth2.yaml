@@ -23,7 +23,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
   edc-ui:
-    image: ghcr.io/sovity/edc-ui:4.1.6
+    image: ghcr.io/sovity/edc-ui:4.1.7
     environment:
       - EDC_UI_CATALOG_URLS=
       - EDC_UI_ACTIVE_PROFILE=mds-open-source
