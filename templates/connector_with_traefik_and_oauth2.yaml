@@ -156,4 +156,4 @@ volumes:
 
 secrets:
   keystore:
-    file: /home/dheider/Documents/testconnector2/connector-certificate.jks
+    file: /connector-certificate.jks
