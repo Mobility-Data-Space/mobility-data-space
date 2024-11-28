@@ -54,7 +54,7 @@ services:
       EDC_LOGGINGHOUSE_EXTENSION_URL: https://clearing-next.test.mobility-dataspace.eu #LoggingHouse URL of the MDS environment
       EDC_OAUTH_CLIENT_ID: [set your oauth client id]
       MY_EDC_PARTICIPANT_ID: [set your connector participant id]
-      EDC_KEYSTORE: [set your cert path and name]
+      EDC_KEYSTORE: /run/secrets/keystore.jks
       EDC_KEYSTORE_PASSWORD: [set your cert password]
       EDC_OAUTH_CERTIFICATE_ALIAS: 1
       EDC_OAUTH_PRIVATE_KEY_ALIAS: 1
@@ -75,7 +75,8 @@ services:
       EDC_WEB_REST_CORS_HEADERS: origin,content-type,accept,authorization,X-Api-Key
       EDC_WEB_REST_CORS_ORIGINS: "*"
     secrets:
-      - keystore
+      - source: keystore
+        target: keystore.jks
     labels:
       - traefik.enable=true
       # /api/dsp
@@ -141,7 +142,7 @@ services:
       - traefik.http.services.auth-proxy.loadbalancer.server.port=4180
 
   postgresql:
-    image: docker.io/bitnami/postgresql:11
+    image: docker.io/bitnami/postgresql:16
     restart: always
     environment:
       POSTGRESQL_USERNAME: edc
@@ -156,4 +157,4 @@ volumes:
 
 secrets:
   keystore:
-    file: /connector-certificate.jks
+    file: /[set your cert path]/[set your cert name].jks
