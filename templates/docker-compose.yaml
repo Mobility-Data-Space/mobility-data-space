@@ -62,7 +62,7 @@ services:
       - ./keystore.jks:/keystore.jks
 
   postgresql:
-    image: docker.io/bitnami/postgresql:11
+    image: docker.io/bitnami/postgresql:16
     restart: always
     environment:
       POSTGRESQL_USERNAME: edc
