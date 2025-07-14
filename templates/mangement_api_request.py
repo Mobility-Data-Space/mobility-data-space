@@ -33,7 +33,7 @@ if __name__ == "__main__":
     For asset creation: /api/management/v3/assets
     For requesting a transfer: /api/management/v2/transferprocesses
     """
-    json_file_path = r"C:\Users\full-path\api__request_no_params.json"
+    json_file_path = "api__request_no_params.json"
     api_key = 'api-key provided by MDS support'
 
     send_authenticated_request(api_url, json_file_path, api_key)
